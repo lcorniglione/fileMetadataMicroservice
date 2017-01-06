@@ -14,16 +14,16 @@ var upload = multer({
 app.use('/', express.static('client'));
 
 
-app.post('/get-file-size', upload.single('data'), function(req, res) {
-    if (req.file) {
-        res.send({
-            filename: req.file.originalname,
-            size: req.file.size,
-            type: req.file.mimetype
+app.post('/get-file-size', upload.single('data'), function(request, response) {
+    if (request.file) {
+        response.send({
+            filename: request.file.originalname,
+            size: request.file.size,
+            type: request.file.mimetype
         });
     }
     else {
-        res.status(500).json({
+        response.status(500).json({
             error: `No file selected`
         });
     }
