@@ -10,16 +10,15 @@
     <div>
         <label>Submit a file to view its filesize.</label>
     </div>
-
-    <div>
-        <input type="file" id="my_file">
-    </div>
-    <div>
-        <button id="sender">Submit</button>
-    </div>
-    <div id="result"></div>
-
-    <script src="/script.js"></script>
+    <form enctype="multipart/form-data" action="/get-file-size" method="post">
+        <div>
+            <input type="file" id="my_file" name="data">
+        </div>
+        <div>
+            <input type="submit" value="Upload Image" name="submit" />
+        </div>
+    </form>
+ 
 
 </body>
 
